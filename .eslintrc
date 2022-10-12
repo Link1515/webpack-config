@@ -9,7 +9,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
-  "ignorePatterns": ["dist"],
+  "ignorePatterns": ["dist", "src/template.html"],
   "rules": {
     "@typescript-eslint/no-var-requires": 0
   }
