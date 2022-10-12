@@ -37,6 +37,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        loader: 'raw-loader'
+      },
+      {
         test: /\.s?css$/,
         use: [
           MiniCssExtractPlugin.loader,
@@ -56,11 +60,16 @@ module.exports = {
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
-        use: 'babel-loader'
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
       },
       {
         test: /\.tsx?$/,
-        use: 'babel-loader',
+        use: 'ts-loader',
         exclude: /node_modules/
       },
       {
