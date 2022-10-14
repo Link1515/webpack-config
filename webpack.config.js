@@ -34,11 +34,12 @@ module.exports = {
     clean: true,
     assetModuleFilename: 'images/[hash][ext][query]'
   },
+  stats: 'errors-only',
   module: {
     rules: [
       {
         test: /\.html$/,
-        loader: 'raw-loader'
+        use: ['html-loader']
       },
       {
         test: /\.s?css$/,
@@ -86,9 +87,9 @@ module.exports = {
   },
   devtool: 'source-map',
   devServer: {
-    static: {
-      directory: path.resolve(__dirname, 'dist')
-    },
+    // static: {
+    //   directory: path.resolve(__dirname, 'dist')
+    // },
     port: 3000,
     open: true,
     hot: true,
